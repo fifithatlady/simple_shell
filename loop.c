@@ -6,12 +6,12 @@
  * Return: Always 0.
  */
 int shell_env(void)
-
 {
-	printf("Environment variables:\n");
+	/* Declare variables at the beginning of the block */
 	char **env_var = environ;
-	while (*env_var != NULL)
 
+	printf("Environment variables:\n");
+	while (*env_var != NULL)
 	{
 		printf("%s\n", *env_var);
 		env_var++;
@@ -82,4 +82,3 @@ int shell_num_builtins(built_s builtin[])
 
 	return (i);
 }
-
