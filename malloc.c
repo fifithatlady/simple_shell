@@ -1,39 +1,62 @@
 #include "shell.h"
 
 /**
- * free_all - a function that frees all malloced spaces
- * @tokens: tokens array
- * @path: it points to a path variable
- * @line: user input
- * @fullpath: the full path of the environment variable
- * @flag: it flags any path that was malloced
- * Return: void
+ **_memset - fills memory with a constant byte
+ *@s: the pointer to the memory area
+ *@b: the byte to fill *s with
+ *@n: the amount of bytes to be filled
+ *Return: (s) a pointer to the memory area s
  */
-void free_all(char **tokens, char *path, char *line, char *fullpath, int flag)
-{
-	free(path);
-	free(tokens);
-	free(line);
-	if (flag == 1)
-		free(fullpath);
-}
-
-/**
- * free_dp - a function frees a double pointer
- * @array: a double pointer to be freed
- * @length: the length of the array
- * Return: void
- */
-void free_dp(char **array, unsigned int length)
+char *_memset(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 
-	i = 0;
-	while (i < length)
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+	for (i = 0; i < n; i++)
+		s[i] = b;
+	return (s);
 }
 
+/**
+ * ffree - frees a string of strings
+ * @pp: string of strings
+ */
+void ffree(char **pp)
+{
+	char **a = pp;
+
+	if (!pp)
+		return;
+	while (*pp)
+		free(*pp++);
+	free(a);
+}
+
+/**
+ * _realloc - reallocates a block of memory
+ * @ptr: pointer to previous malloc'ated block
+ * @old_size: byte size of previous block
+ * @new_size: byte size of new block
+ *
+ * Return: pointer to da ol'block nameen.
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+{
+	char *p;
+
+	if (!ptr)
+		return (malloc(new_size));
+	if (!new_size)
+		return (free(ptr), NULL);
+	if (new_size == old_size)
+		return (ptr);
+
+	p = malloc(new_size);
+	if (!p)
+		return (NULL);
+
+	old_size = old_size < new_size ? old_size : new_size;
+	while (old_size--)
+		p[old_size] = ((char *)ptr)[old_size];
+	free(ptr);
+	return (p);
+}
