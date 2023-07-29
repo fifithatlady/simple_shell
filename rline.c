@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * input_buf - buffers chained commands
- * @info: parameter struct
- * @buf: address of buffer
- * @len: address of len var
+ * input_buf - it is the  buffers chained commands
+ * @info: this the  parameter structucture
+ * @buf: it is the address of buffer
+ * @len: it is also the address of len var
  *
- * Return: bytes read
+ * Return: always bytes read
  */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
@@ -45,10 +45,10 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - gets a line minus the newline
- * @info: parameter struct
+ * get_input - this fetches a line minus the newline
+ * @info: it is a parameter structure
  *
- * Return: bytes read
+ * Return: always bytes read
  */
 ssize_t get_input(info_t *info)
 {

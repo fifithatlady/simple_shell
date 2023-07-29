@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- **_strncpy - s clones or copies a string in the bfunc 
- *@dest: it is tthe destination string to be copied to othe filkes fo excecution
+ **_strncpy - s clones or copies a string in the bfunc
+ *@dest: it is tthe destina string to be copied to othe files fo excecu
  *@src: e source stringin th fil
  *@n: stands for amount of characters to be copied
  *Return:  concatenated string
