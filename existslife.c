@@ -1,26 +1,26 @@
 #include "shell.h"
 
 /**
- **_strncpy - copies a string
- *@dest: the destination string to be copied to
- *@src: the source string
- *@n: the amount of characters to be copied
- *Return: the concatenated string
+ **_strncpy - s clones or copies a string in the bfunc 
+ *@dest: it is tthe destination string to be copied to othe filkes fo excecution
+ *@src: e source stringin th fil
+ *@n: stands for amount of characters to be copied
+ *Return:  concatenated string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j;
+	int num, j;
 	char *s = dest;
 
-	i = 0;
-	while (src[i] != '\0' && i < n - 1)
+	num = 0;
+	while (src[num] != '\0' && num < n - 1)
 	{
-		dest[i] = src[i];
-		i++;
+		dest[num] = src[num];
+		num++;
 	}
-	if (i < n)
+	if (num < n)
 	{
-		j = i;
+		j = num;
 		while (j < n)
 		{
 			dest[j] = '\0';
@@ -31,37 +31,37 @@ char *_strncpy(char *dest, char *src, int n)
 }
 
 /**
- **_strncat - concatenates two strings
- *@dest: the first string
- *@src: the second string
- *@n: the amount of bytes to be maximally used
- *Return: the concatenated string
+ **_strncat - this func  will concatenates two strings
+ *@dest: it is tghe  first string
+ *@src: this one is the b /2nd string
+ *@n: represents quantity of bytes to be maximally used
+ *Return: always return the concatenated string
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int num, j;
 	char *s = dest;
 
-	i = 0;
+	num = 0;
 	j = 0;
-	while (dest[i] != '\0')
-		i++;
+	while (dest[num] != '\0')
+		num++;
 	while (src[j] != '\0' && j < n)
 	{
-		dest[i] = src[j];
-		i++;
+		dest[num] = src[j];
+		num++;
 		j++;
 	}
 	if (j < n)
-		dest[i] = '\0';
+		dest[num] = '\0';
 	return (s);
 }
 
 /**
- **_strchr - locates a character in a string
- *@s: the string to be parsed
- *@c: the character to look for
- *Return: (s) a pointer to the memory area s
+ **_strchr - this locates locates a character in a string
+ *@s: it is the string to be parsed
+ *@c:  character to look for
+ *Return: this (s) a pointer to the memory area s
  */
 char *_strchr(char *s, char c)
 {
